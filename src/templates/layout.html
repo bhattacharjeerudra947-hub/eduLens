@@ -25,7 +25,18 @@
                             <div class="logo-text">XYZ Hospital</div>
                         </div>
                         <div class="navbar-nav">
-                            
+                            {% if current_user.is_authenticated %}
+                                <button class="nav-button">
+                                    <a class="nav-item" href="{{ url_for('users.logout') }}">Logout</a>
+                                </button>
+                            {% else %}
+                                <button class="nav-button">
+                                    <a class="nav-item" href="{{ url_for('users.login') }}">Login</a>
+                                </button>
+                                <button class="nav-button">
+                                    <a class="nav-item" href="{{ url_for('users.register') }}">Register</a>
+                                </button>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -40,7 +51,7 @@
                         <div class="navbar-nav mr-auto">
                             <a class="nav-item nav-link" href="{{ url_for('main.root_route') }}">Home</a>
                             
-                            <a class="nav-item nav-link" href="#">Contact</a>
+                            <a class="nav-item nav-link" href="{{ url_for('main.about') }}">About Us</a>
                         </div>
                     </div>
                     <button class="theme-toggle" onclick="toggleTheme();"> Theme </button>

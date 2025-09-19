@@ -2,7 +2,7 @@ import os
 
 class Config:
 
-    passwd = os.getenv("DATABASE_PASSWD")
+    passwd = "newpassword"
 
     SECRET_KEY = os.getenv("SECRET_KEY")
     SQLALCHEMY_TRACK_MODIFICATIONS = False

@@ -1,20 +1,23 @@
 import os
 from flask import Flask
 from src.config import Config
+from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, text
 
 db = SQLAlchemy()
+bcrypt = Bcrypt()
 
 login_manager = LoginManager()
-login_manager.login_view = 'clients.login'
+login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
 
 def create_app(config_class=Config):
 
     DB_USER = "root"
-    DB_PASSWORD = os.getenv("DATABASE_PASSWD")
+    DB_PASSWORD = "newpassword"
+    print(DB_PASSWORD)
     DB_HOST = "localhost"
     DB_PORT = 3306
     DB_NAME = "student_data"
@@ -29,6 +32,7 @@ def create_app(config_class=Config):
 
     login_manager.init_app(app=app)
     db.init_app(app=app)
+    bcrypt.init_app(app=app)
 
     from src.main.routes import main
     from src.users.routes import users
