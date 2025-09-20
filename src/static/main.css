@@ -191,12 +191,13 @@ body {
 }
 
 
-/* @media (max-width: 768px) {
+ @media (max-width: 768px) {
   .sidebar-content {
     display: none;
   }
 }
 
+/*
 .logo {
   display: flex;
   align-items: center;
