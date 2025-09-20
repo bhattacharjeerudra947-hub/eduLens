@@ -22,7 +22,7 @@ def create_app(config_class=Config):
     DB_PORT = 3306
     DB_NAME = "student_data"
 
-    engine = create_engine(f"mysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}")
+    engine = create_engine(f"mysql://root:newpassword@localhost:3306")
     with engine.connect() as conn:
         conn.execute(text(f"CREATE DATABASE IF NOT EXISTS {DB_NAME}"))
         print(f"Database `{DB_NAME}` is ready.")
