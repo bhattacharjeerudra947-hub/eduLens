@@ -7,11 +7,11 @@
             <fieldset class="">
                 <legend class="">Create Student Account</legend>
                 <div class="">
-                    {{ form.name.label(class="form-control-label") }}
+                    {{ form.name.label(class="") }}
 
                     {% if form.name.errors %}
                         {{ form.name(class="") }}
-                        <div class="invalid-feedback">
+                        <div class="">
                             {% for error in form.name.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
@@ -20,12 +20,12 @@
                         {{ form.name(class="") }}
                     {% endif %}
                 </div>
-                <div class="form-group">
+                <div class="">
                     {{ form.roll_no.label(class="") }}
 
                     {% if form.roll_no.errors %}
                         {{ form.roll_no(class="") }}
-                        <div class="invalid-feedback">
+                        <div class="">
                             {% for error in form.roll_no.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
@@ -34,12 +34,12 @@
                         {{ form.roll_no(class="") }}
                     {% endif %}
                 </div>
-                <div class="form-group">
+                <div class="">
                     {{ form.department.label(class="") }}
 
                     {% if form.department.errors %}
                         {{ form.department(class="") }}
-                        <div class="invalid-feedback">
+                        <div class="">
                             {% for error in form.department.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
@@ -48,12 +48,12 @@
                         {{ form.department(class="") }}
                     {% endif %}
                 </div>
-                <div class="form-group">
+                <div class="">
                     {{ form.phone.label(class="") }}
 
                     {% if form.phone.errors %}
                         {{ form.phone(class="") }}
-                        <div class="invalid-feedback">
+                        <div class="">
                             {% for error in form.phone.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
@@ -62,12 +62,12 @@
                         {{ form.phone(class="") }}
                     {% endif %}
                 </div>
-                <div class="form-group">
+                <div class="">
                     {{ form.email.label(class="") }}
 
                     {% if form.email.errors %}
                         {{ form.email(class="") }}
-                        <div class="invalid-feedback">
+                        <div class="">
                             {% for error in form.email.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
@@ -76,12 +76,12 @@
                         {{ form.email(class="") }}
                     {% endif %}
                 </div>
-                <div class="form-group">
+                <div class="">
                     {{ form.current_password.label(class="") }}
 
                     {% if form.current_password.errors %}
                         {{ form.current_password(class="") }}
-                        <div class="invalid-feedback">
+                        <div class="">
                             {% for error in form.current_password.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
@@ -90,12 +90,12 @@
                         {{ form.current_password(class="") }}
                     {% endif %}
                 </div>
-                <div class="form-group">
+                <div class="">
                     {{ form.confirm_passwd.label(class="") }}
 
                     {% if form.confirm_passwd.errors %}
                         {{ form.confirm_passwd(class="") }}
-                        <div class="invalid-feedback">
+                        <div class="">
                             {% for error in form.confirm_passwd.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
@@ -105,12 +105,12 @@
                     {% endif %}
                 </div>
             </fieldset>
-            <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
+            <div class="">
+                {{ form.submit(class="") }}
             </div>
         </form>
     </div>
-    <div class="border-top pt-3">
+    <div class="">
         <small class="text-muted">
             Already Have an Account? <a class="ml-2" href="{{ url_for('users.login') }}">Sign In</a>
         </small>
