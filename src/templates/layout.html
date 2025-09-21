@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -90,94 +89,6 @@
               </div>
             </div>
         </main>
-=======
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-      
-      <!-- Bootstrap -->
-      <link 
-        rel="stylesheet" 
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
-        crossorigin="anonymous"
-      >
-      <link id="themeStylesheet" rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
-
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
-
-      <link 
-        rel="stylesheet" 
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=contrast" 
-      />
-      
-      {% if title %}
-          <title> EduLens - {{ title }} </title>
-      {% else %}
-          <title> EduLens </title>
-      {% endif %}
-  </head>
-  <body>
-    <header>
-      <nav class="nav-container">
-        <div class="nav-contact-container">
-          <div class="logo-icon"></div>
-          <span class="logo-text">EduLens</span>
-          <a class="home-link" href="{{ url_for('main.root_route') }}">Home</a>
-          <a class="about-link" href="{{ url_for('main.about') }}">About Us</a>
-        </div>
-        <div class="nav-user-container">
-          <button class="theme-toggle" onclick="toggleTheme();"> 
-            <span class="material-symbols-outlined">contrast</span>
-          </button>
-          {% if current_user.is_authenticated %}
-            <button class="nav-button">
-              <a class="nav-item" href="{{ url_for('users.logout') }}">Logout</a>
-            </button>
-          {% else %}
-            <button class="nav-button">
-              <a class="nav-item" href="{{ url_for('users.login') }}">Login</a>
-            </button>
-            <button class="nav-button">
-              <a class="nav-item" href="{{ url_for('users.register') }}">Register</a>
-            </button>
-          {% endif %}
-        </div>
-      </nav>
-    </header>
-    
-    <main role="main" class="container">
-      <section class="main-container">
-        <div>
-          {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-              {% for category, message in messages %}
-                <div class="alert alert-{{ category }}">
-                  {{ message }}
-                </div>
-              {% endfor %}
-            {% endif %}
-          {% endwith %}
-          {% block content %}{% endblock %}
-        </div>
-      </section>
-      <section class="sidebar-container">
-        <div class="content-section">
-          <h3>Our Sidebar</h3>
-          <p class='muted-text'>You can put any information here you'd like.
-            <ul class="list-container">
-              <li class="list-text">Latest Posts</li>
-              <li class="list-text">Announcements</li>
-              <li class="list-text">Calendars</li>
-              <li class="list-text">etc</li>
-            </ul>
-          </p>
-        </div>
-      </section>
-    </main>
->>>>>>> e94f05d951410254c499f14b01d5cc8f20799730
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
