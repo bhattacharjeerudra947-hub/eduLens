@@ -1,6 +1,6 @@
 from flask import (Blueprint, render_template, redirect, flash, url_for, 
                    request)
-from flask_login import login_user, logout_user
+from flask_login import login_user, logout_user, current_user
 from datetime import timedelta
 
 from src.users.forms import RegistrationForm, LoginForm
@@ -58,6 +58,12 @@ def login():
             flash("Invalid credentials! Please try again!", 'danger')
 
     return render_template("login.html", title="Login", form=form)
+
+
+@users.route("/statistics")
+def statistics():
+
+    return render_template("statistics.html", title="Student Stats")
 
 
 @users.route("/logout")

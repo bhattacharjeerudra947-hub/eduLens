@@ -10,9 +10,9 @@
         <link id="themeStylesheet" rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
         
         {% if title %}
-            <title> XYZ Hospital - {{ title }} </title>
+            <title> EduLens - {{ title }} </title>
         {% else %}
-            <title> XYZ Hospital </title>
+            <title> EduLens </title>
         {% endif %}
     </head>
     <body>
@@ -22,11 +22,11 @@
                     <div class="collapse navbar-collapse" id="navbarToggle">
                         <div class="navbar-nav mr-auto logo">
                             <div class="logo-icon"></div>
-                            <div class="logo-text">XYZ Hospital</div>
+                            <div class="logo-text">EduLens</div>
                         </div>
                         <div class="navbar-nav">
                             {% if current_user.is_authenticated %}
-                                <button class="nav-button">
+                                <button class="nav-button" onclick="confirmLogout();">
                                     <a class="nav-item" href="{{ url_for('users.logout') }}">Logout</a>
                                 </button>
                             {% else %}
@@ -43,14 +43,16 @@
             </nav>
             <nav class="navbar navbar-expand-md navbar-dark bg-steel">
                 <div class="container">
-                    <a class="navbar-brand mr-4" href="/">XYZ Hospital</a>
+                    <a class="navbar-brand mr-4" href="/">EduLens</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarToggle">
                         <div class="navbar-nav mr-auto">
-                            <a class="nav-item nav-link" href="{{ url_for('main.root_route') }}">Home</a>
-                            
+                            <a class="nav-item nav-link" href="{{ url_for('main.root_route') }}">{{ root }}</a>
+                            {% if current_user.is_authenticated %}
+                              <a class="nav-item nav-link" href="{{ url_for('users.statistics') }}">Student Stats</a>
+                            {% endif %}
                             <a class="nav-item nav-link" href="{{ url_for('main.about') }}">About Us</a>
                         </div>
                     </div>
@@ -115,7 +117,7 @@
       }
     </script>
     <script>
-      function displayMessage() {
+      function confirmLogout() {
         alert("You are about to be logged out from your account!")
       }
     </script>
