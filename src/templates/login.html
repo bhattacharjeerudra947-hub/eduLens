@@ -7,48 +7,48 @@
     <div class="content-section">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
-            <fieldset class="form-group">
+            <fieldset class="form-container">
                 <legend class="form-heading ">Sign In to your Account</legend>
-                <div class="form-group">
-                    {{ form.name.label(class="form-control-label") }}
+                <div class="form-input">
+                    {{ form.name.label(class="form-label") }}
 
                     {% if form.name.errors %}
-                        {{ form.name(class="") }}
-                        <div class="">
+                        {{ form.name() }}
+                        <div class="form-error">
                             {% for error in form.name.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.name(class="") }}
+                        {{ form.name(class="form-input-area") }}
                     {% endif %}
                 </div>
-                <div class="">
-                    {{ form.roll_no.label(class="") }}
+                <div class="form-input">
+                    {{ form.roll_no.label(class="form-label") }}
 
                     {% if form.roll_no.errors %}
                         {{ form.roll_no(class="") }}
-                        <div class="">
+                        <div class="form-error">
                             {% for error in form.roll_no.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.roll_no(class="") }}
+                        {{ form.roll_no(class="form-input-area") }}
                     {% endif %}
                 </div>
-                <div class="">
-                    {{ form.current_password.label(class="") }}
+                <div class="form-input">
+                    {{ form.current_password.label(class="form-label") }}
 
                     {% if form.current_password.errors %}
-                        {{ form.current_password(class="") }}
-                        <div class="">
+                        {{ form.current_password() }}
+                        <div class="form-error">
                             {% for error in form.current_password.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.current_password(class="") }}
+                        {{ form.current_password(class="form-input-area") }}
                     {% endif %}
                 </div>
                 <div class="">
