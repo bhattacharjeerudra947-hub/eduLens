@@ -81,11 +81,13 @@
     const themeLink = document.getElementById('themeStylesheet');
     const currentTheme = themeLink.getAttribute('href');
 
-    const lightTheme = "/static/main.css";
-    const darkTheme = "/static/dark.css";
+    const lightTheme = "../static/css/login.css";
+    const darkTheme = "../static/css/loginDark.css";
 
-    const newTheme = currentTheme.includes("main.css") ? darkTheme : lightTheme;
+    const newTheme = currentTheme.includes("login.css") ? darkTheme : lightTheme;
     themeLink.setAttribute('href', newTheme);
     localStorage.setItem('theme', newTheme);
     }
+
+    console.log(hi);
 </script>
