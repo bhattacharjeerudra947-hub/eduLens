@@ -1,118 +1,121 @@
+<head>
+    <link rel="stylesheet" href="../static/css/register.css">
+</head>
 
 {% extends "layout.html" %}
 {% block content %}
     <div class="content-section">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
-            <fieldset class="">
-                <legend class="">Create Student Account</legend>
-                <div class="">
-                    {{ form.name.label(class="") }}
+            <fieldset class="form-container">
+                <legend class="form-heading">Create Student Account</legend>
+                <div class="form-input">
+                    {{ form.name.label(class="form-label") }}
 
                     {% if form.name.errors %}
-                        {{ form.name(class="") }}
-                        <div class="">
+                        {{ form.name() }}
+                        <div class="form-error">
                             {% for error in form.name.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.name(class="") }}
+                        {{ form.name(class="form-input-area") }}
                     {% endif %}
                 </div>
-                <div class="">
-                    {{ form.roll_no.label(class="") }}
+                <div class="form-input">
+                    {{ form.roll_no.label(class="form-label") }}
 
                     {% if form.roll_no.errors %}
-                        {{ form.roll_no(class="") }}
-                        <div class="">
+                        {{ form.roll_no() }}
+                        <div class="form-error">
                             {% for error in form.roll_no.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.roll_no(class="") }}
+                        {{ form.roll_no(class="form-input-area") }}
                     {% endif %}
                 </div>
-                <div class="">
-                    {{ form.department.label(class="") }}
+                <div class="form-input">
+                    {{ form.department.label(class="form-label") }}
 
                     {% if form.department.errors %}
-                        {{ form.department(class="") }}
-                        <div class="">
+                        {{ form.department() }}
+                        <div class="form-error">
                             {% for error in form.department.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.department(class="") }}
+                        {{ form.department(class="form-input-area") }}
                     {% endif %}
                 </div>
-                <div class="">
-                    {{ form.phone.label(class="") }}
+                <div class="form-input">
+                    {{ form.phone.label(class="form-label") }}
 
                     {% if form.phone.errors %}
-                        {{ form.phone(class="") }}
-                        <div class="">
+                        {{ form.phone() }}
+                        <div class="form-error">
                             {% for error in form.phone.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.phone(class="") }}
+                        {{ form.phone(class="form-input-area") }}
                     {% endif %}
                 </div>
-                <div class="">
-                    {{ form.email.label(class="") }}
+                <div class="form-input">
+                    {{ form.email.label(class="form-label") }}
 
                     {% if form.email.errors %}
-                        {{ form.email(class="") }}
-                        <div class="">
+                        {{ form.email() }}
+                        <div class="form-error">
                             {% for error in form.email.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.email(class="") }}
+                        {{ form.email(class="form-input-area") }}
                     {% endif %}
                 </div>
-                <div class="">
-                    {{ form.current_password.label(class="") }}
+                <div class="form-input">
+                    {{ form.current_password.label(class="form-label") }}
 
                     {% if form.current_password.errors %}
-                        {{ form.current_password(class="") }}
-                        <div class="">
+                        {{ form.current_password() }}
+                        <div class="form-error">
                             {% for error in form.current_password.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.current_password(class="") }}
+                        {{ form.current_password(class="form-input-area") }}
                     {% endif %}
                 </div>
-                <div class="">
-                    {{ form.confirm_passwd.label(class="") }}
+                <div class="form-input">
+                    {{ form.confirm_passwd.label(class="form-label") }}
 
                     {% if form.confirm_passwd.errors %}
-                        {{ form.confirm_passwd(class="") }}
-                        <div class="">
+                        {{ form.confirm_passwd() }}
+                        <div class="form-error">
                             {% for error in form.confirm_passwd.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.confirm_passwd(class="") }}
+                        {{ form.confirm_passwd(class="form-input-area") }}
                     {% endif %}
                 </div>
             </fieldset>
-            <div class="">
-                {{ form.submit(class="") }}
+            <div class="submit-container">
+                {{ form.submit(class="submit-button") }}
             </div>
         </form>
     </div>
-    <div class="">
-        <small class="text-muted">
-            Already Have an Account? <a class="ml-2" href="{{ url_for('users.login') }}">Sign In</a>
+    <div class="footer-container">
+        <small class="text-muted-footer">
+            Already Have an Account? <a class="reference-link" href="{{ url_for('users.login') }}" >Sign In</a>
         </small>
     </div>
 {% endblock content %}
