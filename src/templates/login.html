@@ -1,66 +1,93 @@
+<head>
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
 
 {% extends "layout.html" %}
 {% block content %}
     <div class="content-section">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Sign In to your Account</legend>
-                <div class="form-group">
-                    {{ form.name.label(class="form-control-label") }}
+            <fieldset class="form-container">
+                <legend class="form-heading ">Sign In to your Account</legend>
+                <div class="form-input">
+                    {{ form.name.label(class="form-label") }}
 
                     {% if form.name.errors %}
-                        {{ form.name(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
+                        {{ form.name() }}
+                        <div class="form-error">
                             {% for error in form.name.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.name(class="form-control form-control-lg") }}
+                        {{ form.name(class="form-input-area") }}
                     {% endif %}
                 </div>
-                <div class="form-group">
-                    {{ form.roll_no.label(class="form-control-label") }}
+                <div class="form-input">
+                    {{ form.roll_no.label(class="form-label") }}
 
                     {% if form.roll_no.errors %}
-                        {{ form.roll_no(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
+                        {{ form.roll_no(class="") }}
+                        <div class="form-error">
                             {% for error in form.roll_no.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.roll_no(class="form-control form-control-lg") }}
+                        {{ form.roll_no(class="form-input-area") }}
                     {% endif %}
                 </div>
-                <div class="form-group">
-                    {{ form.current_password.label(class="form-control-label") }}
+                <div class="form-input">
+                    {{ form.current_password.label(class="form-label") }}
 
                     {% if form.current_password.errors %}
-                        {{ form.current_password(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
+                        {{ form.current_password() }}
+                        <div class="form-error">
                             {% for error in form.current_password.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.current_password(class="form-control form-control-lg") }}
+                        {{ form.current_password(class="form-input-area") }}
                     {% endif %}
                 </div>
-                <div class="form-check">
-                    {{ form.remember(class="form-check-input") }}
-                    {{ form.remember.label(class="form-check-label") }}
+                <div class="remember-me-container">
+                    {{ form.remember(class="remember-me-button") }}
+                    {{ form.remember.label(class="remember-me-label") }}
                 </div>
             </fieldset>
-            <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
+            <div class="submit-container">
+                {{ form.submit(class="submit-button") }}
             </div>
         </form>
     </div>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Don't have an account? <a class="ml-2" href="{{ url_for('users.register') }}">Create Account</a>
-        </small>
+    <div class="footer-container">
+        <small class="">Don't have an account?</small>
+        <a class="reference-link" href="{{ url_for('users.register') }}">Create One!</a>
     </div>
 {% endblock content %}
+
+<script>
+    // Apply saved theme on page load
+    window.onload = function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.getElementById('themeStylesheet').setAttribute('href', savedTheme);
+      }
+      };
+
+    // Toggle theme and save preference
+    function toggleTheme() {
+    const themeLink = document.getElementById('themeStylesheet');
+    const currentTheme = themeLink.getAttribute('href');
+
+    const lightTheme = "../static/css/login.css";
+    const darkTheme = "../static/css/loginDark.css";
+
+    const newTheme = currentTheme.includes("login.css") ? darkTheme : lightTheme;
+    themeLink.setAttribute('href', newTheme);
+    localStorage.setItem('theme', newTheme);
+    }
+
+    console.log(hi);
+</script>

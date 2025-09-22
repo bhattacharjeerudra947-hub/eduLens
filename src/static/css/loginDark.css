@@ -1,0 +1,103 @@
+.content-section {
+    width: 90%;
+    justify-self: center;
+    height: 450px;
+}
+
+.form-container {
+    width: 100%;
+    height: 80%;
+}
+
+.form-heading {
+    color: rgb(252, 250, 250);
+}
+
+.form-input{
+    height: 60px;
+    margin: 8px 0;
+    margin: 40px 0;
+}
+
+.form-input:first-of-type{
+    margin-top: 0;
+}
+
+.form-label{
+    font-size: 24px;
+    font-weight: 200;
+    margin-right: 8px;
+    padding: 10px 0 0;
+    color: #b1acac;
+}
+
+.form-input-area{
+    background-color: transparent;
+    border: 1px solid #4a4848;
+    border-radius: 10px;
+    height: 45px;
+    width: 100%;
+}
+
+.form-error{
+    color: #e36565;
+}
+
+.remember-me-container {
+    margin: 20px 0 0 0;
+    padding: 10px 0;
+}
+
+.remember-me-button {
+    display: inline-block;
+    font-size: 40px;
+}
+
+.remember-me-label {
+    font-size: 18px;
+    color: #b1acac;
+}
+
+.submit-container{
+    display: flex;
+    justify-self: flex-start;
+    margin: 40px 4px;
+    height: 40px;
+}
+
+.submit-button {
+    width: 80px;
+    border: 1px solid #ff7b00;
+    background-color: transparent;
+    color: #ff7b00;
+    font-weight: 400;
+    border-radius: 20px;
+}
+
+.footer-container{
+    padding: 0 10px 4px;
+    width: 90%;
+    justify-self: center;
+}
+
+.submit-button:hover {
+    color: black;
+    background-color: #ff7b00 ;
+    cursor: pointer;
+}
+
+.muted-text-footer {    
+    color: #b6b1b1;
+    margin-top: 1px;
+    font-size: 16px;
+}
+
+.reference-link {
+    font-size: 16px;
+    color: #ff7b00;
+}
+
+.reference-link:hover {
+    color: #ff7b00;
+    text-decoration: underline;
+}
