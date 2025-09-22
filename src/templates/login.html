@@ -51,17 +51,17 @@
                         {{ form.current_password(class="form-input-area") }}
                     {% endif %}
                 </div>
-                <div class="">
-                    {{ form.remember(class="") }}
-                    {{ form.remember.label(class="") }}
+                <div class="remember-me-container">
+                    {{ form.remember(class="remember-me-button") }}
+                    {{ form.remember.label(class="remember-me-label") }}
                 </div>
             </fieldset>
-            <div class="">
-                {{ form.submit(class="") }}
+            <div class="submit-container">
+                {{ form.submit(class="submit-button") }}
             </div>
         </form>
     </div>
-    <div class="">
+    <div class="footer-container">
         <small class="">Don't have an account?</small>
         <a class="reference-link" href="{{ url_for('users.register') }}">Create One!</a>
     </div>
