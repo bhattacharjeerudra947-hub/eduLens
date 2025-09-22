@@ -1,7 +1,7 @@
 .content-section {
     width: 90%;
     justify-self: center;
-    height: 450px;
+    height: auto;
 }
 
 .form-container {
@@ -10,7 +10,7 @@
 }
 
 .form-heading {
-    color: rgb(252, 250, 250);
+    color: white;
 }
 
 .form-input{
@@ -55,7 +55,6 @@
 
 .remember-me-label {
     font-size: 18px;
-    color: #b1acac;
 }
 
 .submit-container{
@@ -66,7 +65,7 @@
 }
 
 .submit-button {
-    width: 80px;
+    width: 150px;
     border: 1px solid #ff7b00;
     background-color: transparent;
     color: #ff7b00;
