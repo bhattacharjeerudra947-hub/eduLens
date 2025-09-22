@@ -7,9 +7,9 @@ main = Blueprint('main', __name__)
 def root_route():
 
     if current_user.is_authenticated:
-        return render_template("dashboard.html", title="Dashboard")
+        return render_template("dashboard.html", title="Dashboard", root="Dashboard")
 
-    return render_template("home.html", title="Home")
+    return render_template("home.html", title="Home", root="Home")
 
 @main.route("/about")
 def about():
